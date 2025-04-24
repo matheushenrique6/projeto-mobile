@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      RELATÓRIO
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+  <div class="relatorio-container">
+    <ion-card class="custom-card">
+      <ion-card-content>
+        <button class="gradient-button">
+          Senha Geral: {{senhasService.senhaGeral}}
+        </button>
+        <button class="gradient-button">
+          Senha Prioridade: {{senhasService.senhaPrior}}
+        </button>
+        <button class="gradient-button">
+          Senha Exame: {{senhasService.senhaExame}}
+        </button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

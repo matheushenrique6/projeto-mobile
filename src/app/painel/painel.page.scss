@@ -1,0 +1,25 @@
+.senha-container{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  gap: .5rem;
+}
+
+.senha-atual{
+  font-size: 3rem;
+}
+
+.senha-atual--label{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.5rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.label-senha-list{
+  padding: 0 0 0 1rem;
+  font-size: 0.8rem;
+  color: var(--gray);
+}

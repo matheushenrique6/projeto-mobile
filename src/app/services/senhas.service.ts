@@ -29,22 +29,26 @@ export class SenhasService {
 
   public novaSenha(tipoSenha: string = ''): void {
     const tipo = tipoSenha.toUpperCase();
-    const data = new Date().toLocaleDateString('pt-BR', {
-      year: '2-digit',
-      month: '2-digit',
-      day: '2-digit',
-    });
-    const hora = new Date().toLocaleTimeString('pt-BR', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
+    const day = new Date().toLocaleDateString('pt-BR', {
+      day: '2-digit'});
+    const month = new Date().toLocaleDateString('pt-BR', {
+      month: '2-digit'});
+    const year = new Date().toLocaleDateString('pt-BR', {
+      year: '2-digit'});
+    
+    
+    const data = `${day}${month}${year}`;
+    // const hora = new Date().toLocaleTimeString('pt-BR', {
+    //   hour: '2-digit',
+    //   minute: '2-digit',
+    // });
 
-    const dataHora: string = `${data} - ${hora}`;
+    // const dataHora: string = `${data} - ${hora}`;
 
     switch (tipo) {
       case 'SG':
         this.somaGeral();
-        this.inputNovaSenha = `${dataHora} - ${tipo} ${(
+        this.inputNovaSenha = `${data} - ${tipo}${(
           this.senhasArray['SG'].length + 1
         )
           .toString()
@@ -54,7 +58,7 @@ export class SenhasService {
 
       case 'SP':
         this.somaPrior();
-        this.inputNovaSenha = `${dataHora} - ${tipo} ${(
+        this.inputNovaSenha = `${data} - ${tipo}${(
           this.senhasArray['SP'].length + 1
         )
           .toString()
@@ -64,7 +68,7 @@ export class SenhasService {
 
       case 'SE':
         this.somaExame();
-        this.inputNovaSenha = `${dataHora} - ${tipo} ${(
+        this.inputNovaSenha = `${data} - ${tipo}${(
           this.senhasArray['SE'].length + 1
         )
           .toString()

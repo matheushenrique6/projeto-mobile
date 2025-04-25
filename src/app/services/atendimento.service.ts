@@ -5,6 +5,13 @@ import { SenhasService } from './senhas.service';
   providedIn: 'root',
 })
 export class AtendimentoService {
+  // public painelChamadas: string[] = [
+  //   '240425 - SG04',
+  //   '240425 - SG03',
+  //   '240425 - SP07',
+  //   '240425 - SG02',
+  //   '240425 - SP06',
+  // ];
   public painelChamadas: string[] = [];
   private senhaAnterior: string | null = null;
 
@@ -18,7 +25,7 @@ export class AtendimentoService {
       this.senhaAnterior = proximaSenha;
       return proximaSenha;
     }
-
+    console.log(this.painelChamadas);
     return null;
   }
 
@@ -37,14 +44,13 @@ export class AtendimentoService {
 
   private adicionarAoPainel(senha: string): void {
     this.painelChamadas.unshift(senha);
-    if (this.painelChamadas.length > 5) {
+    if (this.painelChamadas.length > 6) {
       this.painelChamadas.pop();
     }
   }
 
   finalizarAtendimento(): void {
     console.log(`Atendimento finalizado para: ${this.senhaAnterior}`);
-    // Aqui você pode registrar horário de término, guichê etc.
     this.senhaAnterior = null;
   }
 }

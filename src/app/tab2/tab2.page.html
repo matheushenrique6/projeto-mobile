@@ -27,9 +27,11 @@
     <ion-list-header>
       Últimas 5 chamadas
     </ion-list-header>
-    <ion-item *ngFor="let senha of atendimentoService.painelChamadas">
+    <ion-label class="label-senha-list">mais atual</ion-label>
+    <ion-item class="senha" *ngFor="let senha of atendimentoService.painelChamadas.slice(0, 5)">
       {{ senha }}
     </ion-item>
+    <ion-label class="label-senha-list">menos atual</ion-label>
   </ion-list>
 
 </ion-content>

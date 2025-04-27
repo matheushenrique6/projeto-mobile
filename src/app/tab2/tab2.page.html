@@ -6,20 +6,22 @@
 
 <ion-content class="ion-padding">
 
-  <ion-card *ngIf="senhaAtual">
+  <ion-card>
     <ion-card-header>
       <ion-card-title>Atendendo</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <h2>{{ senhaAtual }}</h2>
+      <h2 *ngIf="senhaAtual">{{ senhaAtual }}</h2>
+      <h2 *ngIf="!senhaAtual">Nenhuma senha sendo atendida</h2>
     </ion-card-content>
   </ion-card>
+  
 
-  <ion-button expand="full" color="success" (click)="chamarSenha()">
+  <ion-button expand="full" color="success" (click)="chamarSenha()" [disabled]="disebleChamar">
     Chamar próxima senha
   </ion-button>
 
-  <ion-button expand="full" color="warning" (click)="finalizarSenha()" [disabled]="!senhaAtual">
+  <ion-button expand="full" color="warning" (click)="finalizarSenha()" [disabled]=disebleFinalizar>
     Finalizar atendimento
   </ion-button>
 

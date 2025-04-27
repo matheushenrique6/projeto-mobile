@@ -33,11 +33,19 @@ export class AtendimentoService {
     const { SP, SE, SG } = this.senhasService.senhasArray;
 
     if (!this.senhaAnterior || !this.senhaAnterior.includes('SP')) {
-      if (SP.length > 0) return SP.shift() || null;
+      if (SP.length > 0) {
+        console.log(SP);
+        return SP.shift() || null;
+      }
     }
-
-    if (SE.length > 0) return SE.shift() || null;
-    if (SG.length > 0) return SG.shift() || null;
+    if (SE.length > 0) {
+      // console.log(SE);
+      return SE.shift() || null;
+    }
+    if (SG.length > 0) {
+      // console.log(SG);
+      return SG.shift() || null;
+    }
 
     return null;
   }

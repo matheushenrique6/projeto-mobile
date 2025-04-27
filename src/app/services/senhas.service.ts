@@ -35,21 +35,15 @@ export class SenhasService {
       month: '2-digit'});
     const year = new Date().toLocaleDateString('pt-BR', {
       year: '2-digit'});
-    
-    
-    const data = `${day}${month}${year}`;
-    // const hora = new Date().toLocaleTimeString('pt-BR', {
-    //   hour: '2-digit',
-    //   minute: '2-digit',
-    // });
 
-    // const dataHora: string = `${data} - ${hora}`;
+
+    const data = `${day}${month}${year}`;
 
     switch (tipo) {
       case 'SG':
         this.somaGeral();
         this.inputNovaSenha = `${data} - ${tipo}${(
-          this.senhasArray['SG'].length + 1
+          this.senhaGeral
         )
           .toString()
           .padStart(2, '0')}`;
@@ -59,7 +53,7 @@ export class SenhasService {
       case 'SP':
         this.somaPrior();
         this.inputNovaSenha = `${data} - ${tipo}${(
-          this.senhasArray['SP'].length + 1
+          this.senhaPrior
         )
           .toString()
           .padStart(2, '0')}`;
@@ -69,13 +63,13 @@ export class SenhasService {
       case 'SE':
         this.somaExame();
         this.inputNovaSenha = `${data} - ${tipo}${(
-          this.senhasArray['SE'].length + 1
+          this.senhaExame
         )
           .toString()
           .padStart(2, '0')}`;
         this.senhasArray.SE.push(this.inputNovaSenha);
         break;
     }
-    console.log(this.senhasArray, this.inputNovaSenha);
+    // console.log(this.senhasArray, this.inputNovaSenha);
   }
 }

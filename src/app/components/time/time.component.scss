@@ -1,0 +1,38 @@
+
+.time-container{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0.5rem 0;
+}
+
+.time-input{
+  width: 7.5rem;
+  height: 2.5rem;
+  padding: 0 0.6rem;
+  border: .06rem solid white;
+  border-radius: .8rem;
+  color:black;
+  background-color: #EDEEF0;
+  accent-color: black;
+}
+
+.time-input[type="time"]::-webkit-calendar-picker-indicator{
+  opacity: 0;
+  z-index: 5;
+  height: 2rem;
+  width: 40%;
+  background-color: red;
+}
+
+.time-input[type="time"]::-webkit-datetime-edit-fields-wrapper{
+  height: 100%;
+  width: 70%;
+}
+
+.time-icon{
+  position: absolute;
+  left: 4.5rem;
+}

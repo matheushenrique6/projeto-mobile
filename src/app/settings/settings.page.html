@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>CONFIGURAÇÕES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Definir horário de funcionamento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>Horário de início</ion-label>
+      <app-time valueDefinition={{horaInicio}} (valueChange)="receberValueHoraInicio($event)"></app-time>
+      <ion-label>Horário de fim</ion-label>
+      <app-time valueDefinition={{horaFim}} (valueChange)="receberValueHoraFim($event)"></app-time>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Configurações</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>

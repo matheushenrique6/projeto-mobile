@@ -26,6 +26,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('../painel/painel.page').then((m) => m.PainelPage),
       },
+      {
+        path: 'settings',
+        loadComponent: () =>
+          import('../settings/settings.page').then((m) => m.SettingsPage),
+      },
     ],
   },
   {

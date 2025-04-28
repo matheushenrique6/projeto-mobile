@@ -98,4 +98,4 @@ Este projeto foi idealizado e desenvolvido em colaboração pelos seguintes alun
 
 ## Licença
 
-Este projeto está licenciado sob a licença CC0-1.0 license.
+Este projeto está licenciado sob a licença [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/) license.

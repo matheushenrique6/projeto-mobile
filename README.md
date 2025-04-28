@@ -5,7 +5,7 @@
 Este projeto consiste no desenvolvimento de um sistema de controle de atendimento em filas para laboratórios médicos. O sistema gerencia o fluxo de pacientes através da emissão de senhas, gestão de filas com priorização, chamada de pacientes para guichês, e registro de atendimentos.
 
 ## Contribuição
-Este projeto foi idealizado e desenvolvido em colaboração pelos seguintes alunos:
+Este projeto foi desenvolvido em colaboração pelos seguintes alunos:
 
 - <img src="https://github.com/matheushenrique6.png" alt="Matheus da Silva" width="32" height="32"> [Matheus Henrique](https://github.com/matheushenrique6)
 - <img src="https://github.com/wagnerfgomes.png" alt="Wagner Felipe" width="32" height="32"> [Wagner Felipe](https://github.com/wagnerfgomes)

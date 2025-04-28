@@ -30,21 +30,10 @@ export class AtendimentoService {
   }
 
   private selecionarProximaSenha(): string | null {
-    const { SP, SE, SG } = this.senhasService.senhasArray;
+    const todasSenhas = this.senhasService.todasSenhas;
 
-    if (!this.senhaAnterior || !this.senhaAnterior.includes('SP')) {
-      if (SP.length > 0) {
-        console.log(SP);
-        return SP.shift() || null;
-      }
-    }
-    if (SE.length > 0) {
-      // console.log(SE);
-      return SE.shift() || null;
-    }
-    if (SG.length > 0) {
-      // console.log(SG);
-      return SG.shift() || null;
+    if (todasSenhas.length > 0) {
+      return todasSenhas.shift() || null;
     }
 
     return null;

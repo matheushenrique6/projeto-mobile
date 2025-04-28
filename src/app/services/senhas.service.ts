@@ -16,6 +16,7 @@ export class SenhasService {
     SP: [],
     SE: [],
   };
+  public todasSenhas: string[] = [];
 
   public somaGeral(): void {
     this.senhaGeral++, this.senhaTotal++;
@@ -29,22 +30,16 @@ export class SenhasService {
 
   public novaSenha(tipoSenha: string = ''): void {
     const tipo = tipoSenha.toUpperCase();
-    const day = new Date().toLocaleDateString('pt-BR', {
-      day: '2-digit'});
-    const month = new Date().toLocaleDateString('pt-BR', {
-      month: '2-digit'});
-    const year = new Date().toLocaleDateString('pt-BR', {
-      year: '2-digit'});
-
+    const day = new Date().toLocaleDateString('pt-BR', { day: '2-digit' });
+    const month = new Date().toLocaleDateString('pt-BR', { month: '2-digit' });
+    const year = new Date().toLocaleDateString('pt-BR', { year: '2-digit' });
 
     const data = `${day}${month}${year}`;
 
     switch (tipo) {
       case 'SG':
         this.somaGeral();
-        this.inputNovaSenha = `${data} - ${tipo}${(
-          this.senhaGeral
-        )
+        this.inputNovaSenha = `${data} - ${tipo}${this.senhaGeral
           .toString()
           .padStart(2, '0')}`;
         this.senhasArray.SG.push(this.inputNovaSenha);
@@ -52,9 +47,7 @@ export class SenhasService {
 
       case 'SP':
         this.somaPrior();
-        this.inputNovaSenha = `${data} - ${tipo}${(
-          this.senhaPrior
-        )
+        this.inputNovaSenha = `${data} - ${tipo}${this.senhaPrior
           .toString()
           .padStart(2, '0')}`;
         this.senhasArray.SP.push(this.inputNovaSenha);
@@ -62,14 +55,14 @@ export class SenhasService {
 
       case 'SE':
         this.somaExame();
-        this.inputNovaSenha = `${data} - ${tipo}${(
-          this.senhaExame
-        )
+        this.inputNovaSenha = `${data} - ${tipo}${this.senhaExame
           .toString()
           .padStart(2, '0')}`;
         this.senhasArray.SE.push(this.inputNovaSenha);
         break;
     }
-    // console.log(this.senhasArray, this.inputNovaSenha);
+
+    // Adiciona sempre na lista geral
+    this.todasSenhas.push(this.inputNovaSenha);
   }
 }

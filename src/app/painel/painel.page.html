@@ -9,7 +9,10 @@
     <div class="senha-container">
       <ion-label class="senha-atual--label">Ultima Senha Chamada</ion-label>
       <ion-title class="senha-atual ion-text-center">
-        {{ painelChamadas[0] || 'Nunhuma Senha Chamada' }}
+        {{ painelChamadas[0] || 'Nunhuma Senha' }}
+      </ion-title>
+      <ion-title color="warning" class="senha-atual ion-text-center">
+        Guichê: {{ settingsService.guiche }}
       </ion-title>
     </div>
     <div></div>

@@ -12,9 +12,18 @@
     </ion-card-header>
     <ion-card-content>
       <ion-label>Horário de início</ion-label>
-      <app-time valueDefinition={{horaInicio}} (valueChange)="receberValueHoraInicio($event)"></app-time>
+      <app-time [valueDefinition]="horaInicio" (valueChange)="receberValueHoraInicio($event)"></app-time>
       <ion-label>Horário de fim</ion-label>
-      <app-time valueDefinition={{horaFim}} (valueChange)="receberValueHoraFim($event)"></app-time>
+      <app-time [valueDefinition]="horaFim" (valueChange)="receberValueHoraFim($event)"></app-time>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Definir Guichê</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input label="digite o número do guiche:" color="secondary" size="large" type="number" placeholder="Guichê" [(ngModel)]="guiche" (change)="receberValueGuiche($event)" ></ion-input>
     </ion-card-content>
   </ion-card>
 

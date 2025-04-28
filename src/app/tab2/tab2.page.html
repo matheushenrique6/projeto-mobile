@@ -6,7 +6,7 @@
 
 <ion-content class="ion-padding">
 
-  <ion-card>
+  <ion-card *ngIf=" foraDeTurno == false ">
     <ion-card-header>
       <ion-card-title>Atendendo</ion-card-title>
     </ion-card-header>
@@ -16,12 +16,26 @@
     </ion-card-content>
   </ion-card>
   
+  <ion-card color="warning" *ngIf=" foraDeTurno == true ">
+    <ion-card-header>
+      <ion-card-title>Fora do horário de funcionamento!!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h2>Voce está tentando chamar uma senha fora do horário de funcionamento.</h2>
+      <h2>Por favor, verifique o horário de funcionamento do sistema.</h2>
+      <ion-button name="chamarSenha" expand="full" color="danger" (click)="checkHorarioFuncionamento()" >
+        Checkar horário de funcionamento.
+        Ultima checkagem: {{timeNow}}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-button expand="full" color="success" (click)="chamarSenha()" [disabled]="disebleChamar">
+
+  <ion-button name="chamarSenha" expand="full" color="success" (click)="chamarSenha()" [disabled]="disableChamar">
     Chamar próxima senha
   </ion-button>
 
-  <ion-button expand="full" color="warning" (click)="finalizarSenha()" [disabled]=disebleFinalizar>
+  <ion-button expand="full" color="warning" (click)="finalizarSenha()" [disabled]="disableFinalizar">
     Finalizar atendimento
   </ion-button>
 

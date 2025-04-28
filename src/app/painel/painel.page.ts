@@ -12,6 +12,7 @@ import {
   IonLabel,
 } from '@ionic/angular/standalone';
 import { AtendimentoService } from '../services/atendimento.service';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   selector: 'app-painel',
@@ -34,7 +35,7 @@ import { AtendimentoService } from '../services/atendimento.service';
 export class PainelPage implements OnInit {
    public painelChamadas: string[] = [];
   
-  constructor(public atendimentoService: AtendimentoService) {}
+  constructor(public atendimentoService: AtendimentoService, public settingsService: SettingsService) {}
 
   ngOnInit() {
     this.painelChamadas = this.atendimentoService.painelChamadas;
